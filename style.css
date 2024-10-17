@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+    text-align: center;
+    color: #333;
+    padding: 20px;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    margin-top: -35px;
+    align-items: center; /* Zentriert die Überschrift */
+    padding-left: 50px;
+}
+
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex; /* Flexbox für bessere Anordnung */
+    flex-direction: column; /* Elemente vertikal anordnen */
+    align-items: center; /* Zentrieren der Inhalte im Formular */
+    width: 100%;
+    max-width: 300px; /* Maximale Breite für das Formular */
+    margin: center; /* Zentriert das Formular in der Mitte der Seite */
+}
+
+input[type="file"] {
+    margin: 10px; /* Zentriert das Upload-Feld */
+    padding-left: -20px;
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    width: 100%; /* Volle Breite */
+    max-width: 250px; /* Maximale Breite */
+    background-color: #fff; /* Hintergrundfarbe */
+}
+
+input, select {
+    font-style: oblique;
+    margin-top: 5px;
+    padding: 10px;
+    width: 100%; /* Volle Breite für alle Elemente */
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    max-width: 250px; /* Maximale Breite */
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border-color: #74ee64;
+    cursor: pointer;
+    padding: 10px 55px;
+    margin-bottom: 3px;
+    transition: background-color 0.3s ease;
+    max-width: 250px; /* Maximale Breite */
+}
+
+button:hover {
+    background-color: #74ee64;
+}
+
+#meme-image, #memeOfTheDay {
+    margin: 20px;
+    max-width: 100%;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#meme-image:hover, #memeOfTheDay:hover {
+    transform: scale(1.05);
+}
+
+#meme-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+#meme-gallery img {
+    max-width: 150px;
+    margin: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#meme-gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation-Container */
+:root {
+    --cor-background: #212123;
+    --cor-reflexo: rgba(255, 255, 255, 0.4);
+    --cores-dancantes-1: rgb(76, 217, 105);
+    --cores-dancantes-2: rgb(52, 170, 220);
+    --cores-dancantes-3: rgb(88, 86, 217);
+    --cores-dancantes-4: rgb(255, 45, 83);
+}
+
+.container {
+    background: linear-gradient(to right, var(--cores-dancantes-1), var(--cores-dancantes-2), var(--cores-dancantes-3), var(--cores-dancantes-4));
+    width: 250px;
+    height: 90px;
+    border-radius: 10px;
+    position: center;
+    z-index: 999;
+    animation: 1.5s coresDancantes linear infinite;
+    margin: 20px ;
+    padding-right: 40px;
+}
+
+@keyframes coresDancantes {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.container .sub-c,
+.container span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container .sub-c {
+    z-index: 1;
+    background-color: var(--cor-background);
+    width: 240px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+}
+
+.container > span {
+    height: 100%;
+    width: 100%;
+    background: inherit;
+    border-radius: 10px;
+}
+
+.container > span:nth-child(1) {
+    filter: blur(5px);
+}
