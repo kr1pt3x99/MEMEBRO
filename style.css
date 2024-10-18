@@ -1,51 +1,70 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f5;
-    text-align: center;
-    color: #333;
-    padding: 20px;
+    background-color: #4444cf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 h1 {
-    color: #ffffff;
-    margin-bottom: 20px;
-    margin-top: -35px;
-    align-items: center; /* Zentriert die Überschrift */
-    padding-left: 50px;
+    padding-left: 90px;
+    color: #000000; /* Standardfarbe der Überschrift */
+    max-width: 300px;
+    max-height: 80px;
+    animation: 1.5s coresDancantes linear infinite; /* Animation nur auf die Überschrift anwenden */
 }
 
+/* Hier kannst du die Animation definieren */
+@keyframes coresDancantes {
+    0% {
+        color: rgb(255, 0, 0); /* Rot */
+    }
+    25% {
+        color: rgb(0, 255, 0); /* Grün */
+    }
+    50% {
+        color: rgb(0, 0, 255); /* Blau */
+    }
+    75% {
+        color: rgb(255, 255, 0); /* Gelb */
+    }
+    100% {
+        color: rgb(255, 0, 255); /* Magenta */
+    }
+}
 
 form {
     background-color: #fff;
-    padding: 20px;
+    padding-top: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: flex; /* Flexbox für bessere Anordnung */
-    flex-direction: column; /* Elemente vertikal anordnen */
-    align-items: center; /* Zentrieren der Inhalte im Formular */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    max-width: 300px; /* Maximale Breite für das Formular */
-    margin: center; /* Zentriert das Formular in der Mitte der Seite */
+    max-width: 500px;
 }
 
 input[type="file"] {
-    margin: 10px; /* Zentriert das Upload-Feld */
+    margin: 10px;
     padding-left: -20px;
     border: 1px solid #7a7a7a;
     border-radius: 5px;
-    width: 100%; /* Volle Breite */
-    max-width: 250px; /* Maximale Breite */
-    background-color: #fff; /* Hintergrundfarbe */
+    width: 100%;
+    max-width: 250px;
+    background-color: #fff;
 }
 
 input, select {
     font-style: oblique;
     margin-top: 5px;
     padding: 10px;
-    width: 100%; /* Volle Breite für alle Elemente */
+    width: 100%;
     border: 1px solid #7a7a7a;
     border-radius: 5px;
-    max-width: 250px; /* Maximale Breite */
+    max-width: 250px;
 }
 
 button {
@@ -56,11 +75,14 @@ button {
     padding: 10px 55px;
     margin-bottom: 3px;
     transition: background-color 0.3s ease;
-    max-width: 250px; /* Maximale Breite */
+    max-width: 250px;
+    
 }
 
 button:hover {
-    background-color: #74ee64;
+    transition: background-color 0.3s ease;
+    background-color: #2ada13;
+    animation: 1.5s coresDancantes linear infinite;
 }
 
 #meme-image, #memeOfTheDay {
@@ -69,7 +91,6 @@ button:hover {
     border: 2px solid #333;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
 }
 
 #meme-image:hover, #memeOfTheDay:hover {
@@ -77,18 +98,18 @@ button:hover {
 }
 
 #meme-gallery {
-    display: flex;
+    display: center;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 20px;
 }
 
 #meme-gallery img {
+    display: center;
     max-width: 150px;
     margin: 10px;
     border: 2px solid #333;
     border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #meme-gallery img:hover {
@@ -96,62 +117,41 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Animation-Container */
-:root {
-    --cor-background: #212123;
-    --cor-reflexo: rgba(255, 255, 255, 0.4);
-    --cores-dancantes-1: rgb(76, 217, 105);
-    --cores-dancantes-2: rgb(52, 170, 220);
-    --cores-dancantes-3: rgb(88, 86, 217);
-    --cores-dancantes-4: rgb(255, 45, 83);
+/* Handy-Simulator */
+.phone-container {
+    width: 480px;
+    height: 600px;
+    background-color: #000;
+    border-radius: 36px;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.container {
+.phone-screen {
+    width: 440px;
+    height: 560px;
+    background-color: white;
+    border-radius: 24px;
+    overflow: auto;
+    padding: 20px;
+}
+
+/* Scrollbar-Styling für Webkit-basierte Browser */
+.phone-screen::-webkit-scrollbar {
+    width: 7px; 
+}
+
+.phone-screen::-webkit-scrollbar-track {
+    background: #f0f0f5;
+    border-radius: 15px; 
+}
+
+.phone-screen::-webkit-scrollbar-thumb {
+    background-color: #333; 
+    border-radius: 10px; 
+    border: 0.5px solid #f0f0f5; 
+}
+
+.phone-screen::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(to right, var(--cores-dancantes-1), var(--cores-dancantes-2), var(--cores-dancantes-3), var(--cores-dancantes-4));
-    width: 250px;
-    height: 90px;
-    border-radius: 10px;
-    position: center;
-    z-index: 999;
-    animation: 1.5s coresDancantes linear infinite;
-    margin: 20px ;
-    padding-right: 40px;
-}
-
-@keyframes coresDancantes {
-    100% {
-        filter: hue-rotate(360deg);
-    }
-}
-
-.container .sub-c,
-.container span {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.container .sub-c {
-    z-index: 1;
-    background-color: var(--cor-background);
-    width: 240px;
-    height: 80px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 5px;
-}
-
-.container > span {
-    height: 100%;
-    width: 100%;
-    background: inherit;
-    border-radius: 10px;
-}
-
-.container > span:nth-child(1) {
-    filter: blur(5px);
 }
